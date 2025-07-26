@@ -1,0 +1,78 @@
+add_newline = true
+scan_timeout = 20
+format = """
+$time\
+$character $directory$git_branch$git_status$python$nodejs$rust$golang$memory_usage$battery$cmd_duration
+→ """
+
+[time]
+format = "🕒 [$time]($style) "
+time_format = "%H:%M:%S"
+style = "dimmed green"
+disabled = false
+
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = true
+home_symbol = "~"
+
+[git_branch]
+symbol = " "
+style = "bold magenta"
+
+[git_status]
+style = "white"
+format = "$all_status "
+untracked = "✱${count} "
+modified = "✎${count} "
+staged = "+${count} "
+ahead = "↑${count} "
+behind = "↓${count} "
+conflicted = "‼ "
+
+[python]
+symbol = "🐍 "
+style = "bold green"
+format = "$symbol[${version}]($style) "
+
+[nodejs]
+symbol = " "
+style = "bold blue"
+format = "$symbol[${version}]($style) "
+
+[rust]
+symbol = "🦀 "
+style = "bold red"
+format = "$symbol[${version}]($style) "
+
+[golang]
+symbol = "🐹 "
+style = "bold cyan"
+format = "$symbol[${version}]($style) "
+
+[memory_usage]
+disabled = false
+threshold = 70
+symbol = "🧠 "
+style = "bold blue"
+format = "$symbol[$ram_pct]($style) "
+
+[battery]
+disabled = false
+full_symbol = "🔋"
+charging_symbol = "⚡"
+discharging_symbol = "🔌"
+unknown_symbol = "❓"
+empty_symbol = "🪫"
+format = "$symbol[$percentage]($style) "
+
+[cmd_duration]
+min_time = 2000
+format = "⏱ [$duration]($style) "
+style = "yellow"
+
+[character]
+success_symbol = "[✔](bold green)"
+error_symbol = "[✘](bold red)"
+vicmd_symbol = "[🕪](bold blue)"
