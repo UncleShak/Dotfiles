@@ -1,5 +1,7 @@
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.mouse='a'
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.mouse='a'
 vim.o.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
+vim.cmd("syntax on")
 
